@@ -1,16 +1,29 @@
 :root {
+  --bg-1: #f8fafc;
+  --bg-2: #eef6ff;
+  --text: #0f172a;
+  --white: #ffffff;
+  --muted: #475569;
+  --accent: #0082be;
+  --card: #ffffff;
   --color-bg: #f6f1ea;
   --color-surface: #ffffff;
   --color-surface-alt: #f1ebe2;
   --color-text: #1f1a14;
+  --color-text-reverse: #ebe1d5;
   --color-muted: #6f655a;
-  --color-accent: #e86a4a;
+  --color-accent: #25d382;
   --color-accent-2: #0f4c5c;
   --color-border: rgba(31, 26, 20, 0.12);
-  --shadow-soft: 0 18px 45px rgba(31, 26, 20, 0.12);
+  --color-chip: color-mix(in srgb, var(--accent) 16%, white);
+  --color-chip-border: #bae6fd;
+  --color-filter-border: #d0d7de;
+  --shadow-medium: 0 18px 45px rgba(31, 26, 20, 0.12);
+  --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.06);
   --radius-lg: 24px;
   --radius-md: 16px;
   --radius-sm: 10px;
+  --radius-xxl: 999px;
   --section-gap: 80px;
   --font-display: "DM Serif Display", "Iowan Old Style", "Palatino Linotype", "Georgia", serif;
   --font-body: "Manrope", "Avenir Next", "Mulish", "Trebuchet MS", sans-serif;
@@ -23,22 +36,16 @@
   margin: 0;
   padding: 0;
 }
-
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background-color: var(--color-bg);
-  background-image:
-    radial-gradient(circle at top right, rgba(232, 106, 74, 0.16), transparent 55%),
-    radial-gradient(circle at 10% 20%, rgba(15, 76, 92, 0.12), transparent 50%),
-    linear-gradient(90deg, rgba(31, 26, 20, 0.06) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(31, 26, 20, 0.06) 1px, transparent 1px);
-  background-size: auto, auto, 120px 120px, 120px 120px;
-  line-height: 1.6;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 20%, #dbeafe 0%, transparent 40%),
+    radial-gradient(circle at 85% 0%, #ffedd5 0%, transparent 35%),
+    linear-gradient(160deg, var(--bg-1), var(--bg-2));
   font-family: var(--font-body);
   font-size: 16px;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
 }
 
 h1,
