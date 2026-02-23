@@ -259,7 +259,7 @@
 .skill-list li {
   background: var(--color-surface-alt);
   padding: 6px 10px;
-  border-radius: 8px;
+  border-radius: var(--radius-xxl);
   font-size: 0.85rem;
 }
 
@@ -328,7 +328,7 @@ h3 a:hover {
 
 .filter-btn {
   border: 1px solid var(--color-filter-border);
-  background: var(--white);
+  background: var(--color-filter-button);
   color: var(--color-text);
   border-radius: var(--radius-xxl);
   padding: 0.4rem 0.85rem;
@@ -530,6 +530,33 @@ h3 a:hover {
   }
 
   .sidebar__footer {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
+}
+
+.theme-toggle {
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  padding: 8px 10px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: var(--color-accent);
+  color: var(--white);
+}
+
+.theme-toggle:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-accent-2);
+  outline-offset: 2px;
 }

@@ -1,7 +1,31 @@
-<script setup>
+﻿<script setup>
+import { onMounted, ref, watch } from 'vue'
 import SkillsSection from './components/SkillsSection.vue'
 import ExperiencesSection from './components/ExperiencesSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
+
+const isDarkMode = ref(false)
+
+const applyTheme = (useDarkMode) => {
+  const theme = useDarkMode ? 'dark' : 'light'
+  document.documentElement.setAttribute('data-theme', theme)
+}
+
+onMounted(() => {
+  const savedTheme = localStorage.getItem('portfolio-theme')
+  isDarkMode.value = savedTheme === 'dark'
+  applyTheme(isDarkMode.value)
+})
+
+watch(isDarkMode, (value) => {
+  const theme = value ? 'dark' : 'light'
+  applyTheme(value)
+  localStorage.setItem('portfolio-theme', theme)
+})
+
+const toggleTheme = () => {
+  isDarkMode.value = !isDarkMode.value
+}
 
 const profile = {
   name: 'Maxime Piau',
@@ -194,6 +218,14 @@ const projects = [
       </nav>
       <div class="sidebar__footer">
         <p class="muted">Étudiant BUT info</p>
+        <button
+          type="button"
+          class="theme-toggle"
+          :aria-pressed="isDarkMode.toString()"
+          @click="toggleTheme"
+        >
+          {{ isDarkMode ? 'Mode clair' : 'Mode sombre' }}
+        </button>
       </div>
     </aside>
 
