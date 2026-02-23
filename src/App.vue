@@ -37,7 +37,9 @@ const skills = [
 
 const experiences = [
   {
-    title: 'Alternant – Tests fonctionnels & Automatisation ERP M3 - ErpToCloud',
+    title: 'Alternant – Tests fonctionnels & Automatisation ERP M3',
+    company: 'ErpToCloud',
+    companyUrl: 'https://www.erptocloud.fr',
     place: 'Carquefou',
     period: 'Septembre 2025 à août 2025',
     details:
@@ -46,7 +48,9 @@ const experiences = [
       " sur l’ERP Infor M3 (données, API, XPath). Documentation et suivi des évolutions mensuelles."
   },
   {
-    title: 'Stage développeur informatique – TERRENA',
+    title: 'Stage développeur informatique',
+    company: 'TERRENA',
+    companyUrl: 'https://www.terrena.fr',
     place: 'Ancenis',
     period: 'Avril à juillet 2025',
     details:
@@ -62,8 +66,8 @@ const projects = [
     description:
       "Application Android (Kotlin Jetpack Compose) pour comparer les prix des carburants autour d'une ville choisie. " +
       "Fonctionnalités : recherche de ville (Nominatim), favoris, filtres (type de carburant, rayon, date de mise à jour), " +
-      "affichage des stations (prix, adresse, distance, date). Technique : MVVM (ViewModel + StateFlow), Retrofit + OkHttp ",
-    stack: ['Kotlin', 'Jetpack Compose', 'Material 3', 'MVVM', 'StateFlow', 'Retrofit', 'OkHttp', 'kotlinx.serialization', 'DataStore', 'Figma'],
+      "affichage des stations (prix, adresse, distance, date). Technique : MVVM (ViewModel + StateFlow), Retrofit + OkHttp.",
+    stack: ['Kotlin', 'Jetpack Compose', 'Material 3', 'MVVM', 'Retrofit', 'OkHttp', 'Figma'],
     link: 'https://github.com/Max04git/CarburAncenis'
   },
   {
