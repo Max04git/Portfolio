@@ -1,38 +1,34 @@
-# Portfolio
+# Portfolio - Maxime Piau
 
-This template should help get you started developing with Vue 3 in Vite.
+Portfolio personnel developpé avec Vue.js et Vite (serveur de développement local).
 
-## Recommended IDE Setup
+Accéder à [Portfolio - Maxime PIAU](https://max04git.github.io/Portfolio/)
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### Stack
 
-## Recommended Browser Setup
+Vue.js, CSS et Vite
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+### Contenu
 
-## Customize configuration
+- Présentation
+- Compétences
+- Expériences
+- Projets
+- Contact
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Pour lancer le projet en local
 
-## Project Setup
-
-```sh
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+Puis ouvrir l'URL affichée dans le terminal (`http://localhost:5173`).
 
-```sh
-npm run build
+### Déploiement
+
+Le projet est déployé avec GitHub Pages.
+
+```bash
+npm run deploy
 ```
