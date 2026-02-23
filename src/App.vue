@@ -58,35 +58,39 @@ const projects = [
   {
     title: "Carbur'Ancenis",
     type: "Personnel",
+    date: "2026",
     description:
       "Application Android (Kotlin Jetpack Compose) pour comparer les prix des carburants autour d'une ville choisie. " +
       "Fonctionnalités : recherche de ville (Nominatim), favoris, filtres (type de carburant, rayon, date de mise à jour), " +
       "affichage des stations (prix, adresse, distance, date). Technique : MVVM (ViewModel + StateFlow), Retrofit + OkHttp ",
-    stack: ['Kotlin', 'Jetpack Compose', 'Material 3', 'MVVM', 'StateFlow', 'Retrofit', 'OkHttp', 'kotlinx.serialization', 'DataStore'],
+    stack: ['Kotlin', 'Jetpack Compose', 'Material 3', 'MVVM', 'StateFlow', 'Retrofit', 'OkHttp', 'kotlinx.serialization', 'DataStore', 'Figma'],
     link: 'https://github.com/Max04git/CarburAncenis'
   },
   {
     title: 'Plateforme de réservation Spring Boot (Peoples / Reservation / BFF)',
     type: "Académique",
+    date: "2026",
     description:
       "Architecture microservices avec 3 services : Peoples (CRUD personnes, validation complète, suppression en cascade des réservations), " +
       "Reservation (CRUD réservations avec vérification des personnes, salles et créneaux), et BFF (proxy sécurisé + agrégation). " +
       "Sécurité via Spring Security, ajout du header X-User, stockage users en mémoire ou en base selon configuration.",
-    stack: ['Java', 'Spring Boot', 'Spring Security', 'WebClient', 'H2', 'Microservices', 'REST API', 'ControllerAdvice'],
+    stack: ['Kotlin', 'Spring Boot', 'Spring Security', 'WebClient', 'Microservices', 'REST API'],
     link: 'https://github.com/Max04git/projet-spring-boot'
   },
   {
     title: 'Analyse de Sentiments - Amazon Reviews',
     type: "Académique",
+    date: "2026",
     description:
       "Projet académique de Data Science sur Amazon Reviews pour prédire la note (1 à 5 étoiles) à partir du texte. " +
       "Pipeline NLP avec spaCy, rééquilibrage des classes, comparaison KNN / Decision Tree / Random Forest, et régression linéaire évaluée par RMSE.",
-    stack: ['Python', 'spaCy', 'Scikit-learn', 'imbalanced-learn', 'Pandas', 'NumPy', 'Matplotlib', 'NLP', 'Machine Learning'],
+    stack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib'],
     link: 'https://github.com/lboeglin/amazon-reviews-nlp'
   },
   {
     title: 'Application Android observance médicamenteuse',
     type: "Académique",
+    date: "2026",
     description:
       "Développement d’une application mobile Android en Kotlin Jetpack Compose, intégrant la gestion des prises de " +
       "médicaments (ajout, scan d’ordonnance ...). Projet mené en méthodologie Agile Scrum (Product Owner, réunion Daily...).",
@@ -96,15 +100,27 @@ const projects = [
   {
     title: 'Application Android Movie',
     type: "Académique",
+    date: "2025",
     description:
       "Application Android native basée sur l'API TMDB pour consulter les films et séries du moment, voir les details et rechercher par titre ou genre. " +
       "Projet réalisé en groupe avec plusieurs écrans (accueil, details, recherche, films, séries).",
-    stack: ['Android', 'Kotlin', 'TMDB API', 'REST API'],
+    stack: ['Android', 'Kotlin', 'TMDB API', 'REST API', 'Figma'],
     link: 'https://github.com/Max04git/AppliTheMovieDB'
+  },
+  {
+    title: 'Puissance 4 client-serveur',
+    type: "Académique",
+    date: "2025",
+    description:
+      "Projet de programmation système : jeu Puissance 4 en architecture client-serveur avec protocole complet (connexion, ID joueur, tours, résultat). " +
+      "Travail sur la boucle Update et les états (waiting, colorSelect, play, result) pour contrôler la logique du jeu.",
+    stack: ['Golang', 'Programmation système', 'Client-serveur'],
+    link: 'https://github.com/Max04git/projet-puissance4'
   },
   {
     title: 'Site de mini-jeux',
     type: "Personnel",
+    date: "2024",
     description:
       "Mini-jeux JavaScript (allumettes, morpion, mastermind) réalisés pendant l'été 2024 afin de découvrir JavaScript",
     stack: ['JavaScript', 'HTML', 'CSS'],
@@ -113,32 +129,26 @@ const projects = [
   {
     title: 'Application Skyjo',
     type: "Académique",
+    date: "2024",
     description:
       "Application cliente Skyjo en Kotlin/JavaFX, développée en architecture MVC à partir d'un serveur de jeu fourni. " +
-      "Implémentation des vues JavaFX selon les maquettes et d'un modèle aligné sur les diagrammes de classes et les données serveur.",
+      "Implémentation des vues JavaFX et d'un modèle aligné sur les diagrammes de classes et les données serveur.",
     stack: ['Kotlin'],
     link: ''
   },
   {
     title: "Projet d'exploitation de données",
     type: "Académique",
+    date: "2024",
     description:
       'Requêtes base de données sur des bornes de recharge, répartition par départements.',
     stack: ['SQL'],
     link: ''
   },
   {
-    title: 'Puissance 4 client-serveur',
-    type: "Académique",
-    description:
-      "Projet de programmation système (R3.05) : jeu Puissance 4 en architecture client-serveur avec protocole complet (connexion, ID joueur, couleurs, tours, résultat, rejouer). " +
-      "Travail sur la boucle Update et la machine à états (waiting, colorSelect, play, result) pour contrôler la logique du jeu.",
-    stack: ['Golang', 'Programmation système', 'Client-serveur'],
-    link: 'https://github.com/Max04git/projet-puissance4'
-  },
-  {
     title: 'Jeu video 2D (quadtree)',
     type: "Académique",
+    date: "2023",
     description:
       "Projet en Golang : implémentation d'un quadtree avec fonctions update, readFromFile, get et make, plus tests associés. " +
       "Extension du moteur avec terrain aléatoire, sauvegarde, gestion de l'eau non traversable et options activables via config.",
@@ -148,8 +158,9 @@ const projects = [
   {
     title: 'Jeu des allumettes',
     type: "Personnel",
+    date: "2022",
     description:
-      "Projet solo découverte du langage PHP (2023). Jeu à deux joueurs dans lequel le joueur qui prend la dernière" +
+      "Projet solo découverte du langage PHP (2022). Jeu à deux joueurs dans lequel le joueur qui prend la dernière" +
       " allumette a perdu.",
     stack: ['PHP'],
     link: ''
@@ -157,6 +168,7 @@ const projects = [
   {
     title: 'Morpion',
     type: "Personnel",
+    date: "2021",
     description:
       'Projet Morpion en Python (2021), une version à 2 joueurs et une version solo contre un bot (aléatoire).',
     stack: ['Python'],

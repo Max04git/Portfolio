@@ -34,6 +34,7 @@ const props = defineProps({
         </div>
         <div v-if="project.type" class="project-card__tags">
           <span class="chip chip--type">{{ project.type }}</span>
+          <span class="chip chip--type">{{ project.date }}</span>
         </div>
         <p class="muted">{{ project.description }}</p>
         <div class="project-card__tags">
