@@ -18,7 +18,13 @@ const props = defineProps({
         <div class="timeline__badge"></div>
         <div class="timeline__content">
           <div class="timeline__top">
-            <h3>{{ item.title }}</h3>
+            <h3>
+              {{ item.title }} -
+              <a v-if="item.companyUrl" :href="item.companyUrl" target="_blank" rel="noreferrer">
+                {{ item.company }}
+              </a>
+              <span v-else>{{ item.company }}</span>
+            </h3>
             <span class="muted">{{ item.period }}</span>
           </div>
           <p class="muted">{{ item.place }}</p>

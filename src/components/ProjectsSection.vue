@@ -1,9 +1,23 @@
 <script setup>
+import { ref, computed } from 'vue'
+
 const props = defineProps({
   projects: {
     type: Array,
     required: true
   }
+})
+const selectedType = ref('Tous')
+const filterOptions = ['Tous', 'Académique', 'Personnel']
+
+const normalizeType = (value = '') =>
+  value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+
+const filteredProjects = computed(() => {
+  if (selectedType.value === 'Tous') return props.projects
+
+  const wanted = normalizeType(selectedType.value)
+  return props.projects.filter((project) => normalizeType(project.type) === wanted)
 })
 </script>
 
@@ -13,8 +27,21 @@ const props = defineProps({
       <p class="eyebrow">Projets</p>
       <h2>Mes projets personnels et académiques.</h2>
     </div>
+
+    <div class="project-filters">
+      <button
+        v-for="option in filterOptions"
+        :key="option"
+        type="button"
+        class="filter-btn"
+        :class="{ 'filter-btn--active': selectedType === option }"
+        @click="selectedType = option"
+      >
+        {{ option }}
+      </button>
+    </div>
     <div class="projects">
-      <article v-for="project in props.projects" :key="project.title" class="project-card">
+      <article v-for="project in filteredProjects" :key="project.title" class="project-card">
         <div class="project-card__head">
           <h3>{{ project.title }}</h3>
           <a
