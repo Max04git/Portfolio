@@ -1,8 +1,8 @@
-# Portfolio - Maxime Piau
+# Portfolio - Maxime P
 
 Portfolio personnel developpé avec Vue.js et Vite (serveur de développement local).
 
-Accéder à [Portfolio - Maxime PIAU](https://max04git.github.io/Portfolio/)
+Accéder à [Portfolio - Maxime P](https://max04git.github.io/Portfolio/)
 
 ### Stack
 
