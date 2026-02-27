@@ -5,6 +5,7 @@ import ExperiencesSection from './components/ExperiencesSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 
 const isDarkMode = ref(false)
+const isMenuOpen = ref(false)
 
 const applyTheme = (useDarkMode) => {
   const theme = useDarkMode ? 'dark' : 'light'
@@ -27,14 +28,22 @@ const toggleTheme = () => {
   isDarkMode.value = !isDarkMode.value
 }
 
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
+}
+
+const closeMenu = () => {
+  isMenuOpen.value = false
+}
+
 const profile = {
   name: 'Maxime Piau',
   role: 'Etudiant en BUT informatique',
-  location: 'Nantes / Angers / Ancenis (44150)',
+  location: 'Nantes / Angers / Ancenis',
   summary:
     'Etudiant en informatique a Nantes.\nCe qui me plaît le plus, c est partir de 0 et voir un projet grandir.',
   links: [
-    { label: 'Email', value: 'maxime.piau04@gmail.com' },
+    { label: 'Email', value: 'maximepiau.contact@gmail.com' },
     { label: 'GitHub', value: 'https://github.com/Max04git' },
     { label: 'LinkedIn', value: 'https://www.linkedin.com/in/maxime-piau-921169310/' }
   ]
@@ -207,14 +216,26 @@ const projects = [
 
 <template>
   <div class="page">
-    <aside class="sidebar">
+    <button
+      type="button"
+      class="sidebar-toggle"
+      :aria-expanded="isMenuOpen.toString()"
+      aria-label="Ouvrir le menu"
+      @click="toggleMenu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <aside class="sidebar" :class="{ 'sidebar--mobile-open': isMenuOpen }">
       <div class="sidebar__brand">MP</div>
       <nav class="sidebar__nav">
-        <a href="#about">Qui suis-je</a>
-        <a href="#skills">Compétences</a>
-        <a href="#experience">Expériences</a>
-        <a href="#projects">Projets</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" @click="closeMenu">Qui suis-je</a>
+        <a href="#skills" @click="closeMenu">Compétences</a>
+        <a href="#experience" @click="closeMenu">Expériences</a>
+        <a href="#projects" @click="closeMenu">Projets</a>
+        <a href="#contact" @click="closeMenu">Contact</a>
       </nav>
       <div class="sidebar__footer">
         <p class="muted">Étudiant BUT info</p>
@@ -266,9 +287,9 @@ const projects = [
         </section>
         <section id="contact" class="contact">
           <div class="contact-card">
-            <div class="contact-card__head">
+            <div class="section__head">
               <p class="eyebrow">Contact</p>
-              <p class="muted">Disponible pour un CDI ou une alternance.</p>
+              <p class="muted">Recherche une alternance pour un Master informatique</p>
             </div>
             <div class="contact-card__content">
               <a class="value" :href="`mailto:${profile.links[0].value}`">

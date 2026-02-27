@@ -7,7 +7,7 @@
 .page {
   width: min(1120px, 100% - 48px);
   margin: 0 auto;
-  padding: 56px 0 80px;
+  padding: 30px 0 30px;
 }
 
 .page__main {
@@ -31,6 +31,32 @@
   flex-direction: column;
   gap: 24px;
   width: 200px;
+}
+
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 30;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-toggle span {
+  width: 30px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--accent);
 }
 
 .sidebar__brand {
@@ -442,6 +468,7 @@ h3 a:hover {
 .contact-card__content {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
 }
@@ -461,30 +488,33 @@ h3 a:hover {
 }
 
 @media (max-width: 1600px) {
-  .sidebar {
-    position: static;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 24px;
+  .sidebar-toggle {
+    display: inline-flex;
   }
 
-  .sidebar__nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 12px 16px;
+  .sidebar {
+    top: 68px;
+    left: 16px;
+    overflow: auto;
+    transform: translateX(-120%);
+    transition: transform 0.2s ease;
+  }
+
+  .sidebar--mobile-open {
+    transform: translateX(0);
+    pointer-events: auto;
   }
 
   .accueil {
     grid-template-columns: 1fr;
   }
 
-  .skills,
-  .projects {
+  .skills {
     grid-template-columns: 1fr;
+  }
+
+  .projects {
+    grid-template-columns: 1fr 1fr;
   }
 
   .grid-2 {
@@ -493,46 +523,21 @@ h3 a:hover {
 
 }
 
+@media (max-width: 1100px) {
+  .timeline__top {
+    display: flow;
+    align-items: baseline;
+  }
+}
+
 @media (max-width: 768px) {
   .page {
     width: min(1120px, 100% - 24px);
     padding: 24px 0 48px;
   }
 
-  .sidebar {
-    padding: 16px;
-    gap: 12px;
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .sidebar__brand {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-  }
-
-  .sidebar__nav {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-    justify-content: initial;
-  }
-
-  .sidebar__nav a {
-    display: block;
-    text-align: center;
-    padding: 8px 10px;
-    border-radius: 10px;
-    border: 1px solid var(--color-border);
-    background: var(--color-surface-alt);
-    font-size: 0.82rem;
-  }
-
-  .sidebar__footer {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  .projects {
+    grid-template-columns: 1fr;
   }
 }
 
